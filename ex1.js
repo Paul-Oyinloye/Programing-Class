@@ -24,7 +24,7 @@ let check = () => {
     alert("Checking Baggage weight: " + weight + "kg");
 
     if (weight > LIMIT) {
-        alert("Luggage is Overweight! Please remove some items.");
+        alert("Luggage is Overweight! Please reduce.");
         document.getElementById("removed").style.display = "block";
         document.getElementById("remB").style.display = "block";
     } else {
