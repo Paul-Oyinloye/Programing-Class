@@ -24,11 +24,11 @@ let check = () => {
     alert("Checking Baggage weight: " + weight + "kg");
 
     if (weight > LIMIT) {
-        alert("❌ Overweight! Please remove some items.");
+        alert("Luggage is Overweight! Please remove some items.");
         document.getElementById("removed").style.display = "block";
         document.getElementById("remB").style.display = "block";
     } else {
-        alert("✅ Baggage weight is OK. You may proceed.");
+        alert("Baggage weight is OK. Luggage Weight Accepted.");
         document.getElementById("removed").style.display = "none";
         document.getElementById("remB").style.display = "none";
     }
@@ -47,9 +47,9 @@ let remove = () => {
     document.getElementById("weight").value = newWeight; // update input
 
     if (newWeight > LIMIT) {
-        alert("Weight reduced to " + newWeight + "kg ❌ Still overweight.");
+        alert("Weight reduced to " + newWeight + "kg Luggage Still overweight.");
     } else {
-        alert("Weight reduced to " + newWeight + "kg ✅ You may proceed.");
+        alert("Weight reduced to " + newWeight + "kg Luggage You can proceed.");
         document.getElementById("removed").style.display = "none";
         document.getElementById("remB").style.display = "none";
     }
