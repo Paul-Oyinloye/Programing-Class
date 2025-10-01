@@ -10,15 +10,47 @@
             //the remove function should update the weight
             //and let the user know when ok to proceed
 
-function check() {
-            let weight = parseInt(document.getElementById("weight").value);
+// baggage weight limit
+const LIMIT = 23;
 
-            if (isNaN(weight)) {
-                alert("Please enter a valid number for baggage weight.");
-            } else if (weight <= 25) {
-                alert("Baggage weight is " + weight + "kg is Allowed.");
-            } else {
-                alert("Baggage weight is " + weight + "kg is Overweight!");
-            }
-        }
-      
+let check = () => {
+    let weight = parseInt(document.getElementById("weight").value);
+
+    if (isNaN(weight)) {
+        alert("Please enter a valid baggage weight.");
+        return;
+    }
+
+    alert("Checking Baggage weight: " + weight + "kg");
+
+    if (weight > LIMIT) {
+        alert("❌ Overweight! Please remove some items.");
+        document.getElementById("removed").style.display = "block";
+        document.getElementById("remB").style.display = "block";
+    } else {
+        alert("✅ Baggage weight is OK. You may proceed.");
+        document.getElementById("removed").style.display = "none";
+        document.getElementById("remB").style.display = "none";
+    }
+};
+
+let remove = () => {
+    let weight = parseInt(document.getElementById("weight").value);
+    let toRemove = parseInt(document.getElementById("removed").value);
+
+    if (isNaN(toRemove) || toRemove <= 0) {
+        alert("Enter a valid amount to remove.");
+        return;
+    }
+
+    let newWeight = weight - toRemove;
+    document.getElementById("weight").value = newWeight; // update input
+
+    if (newWeight > LIMIT) {
+        alert("Weight reduced to " + newWeight + "kg ❌ Still overweight.");
+    } else {
+        alert("Weight reduced to " + newWeight + "kg ✅ You may proceed.");
+        document.getElementById("removed").style.display = "none";
+        document.getElementById("remB").style.display = "none";
+    }
+};
