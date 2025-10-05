@@ -30,25 +30,55 @@
 <h1>Exercise 3</h1>
 <p>
 Sum of multiples of a or b in list l.
-       <label for="a:">A</label> <input type="text" id="a1"><br>
-        <label for="b:">B</label><input type="text" id="b1"><br>
-       <label for="l:">L</label> <input type="text" id="l">
-
-</p>
-    <p><button onclick="eulerlist()">Press for solution to project Euler</button>
-</p>
-
-<p>
-
-    Part 1: compute the sum of multiples of elements in list a, found in list l. List a is of length 2
-    <br>
     Part 1: compute the sum of multiples of elements in list a, found in list l. List a may be any length
-       <label for="aList:">A</label> <input type="text" id="aList">
-        <label for="mList:">L</label> <input type="text" id="mList">
-
 </p>
-    <p><button onclick="euler2Lists()">Press for custom sum of multiples</button>
-    <p><button onclick="euler2Lists1()">Press for custom sum of multiples</button>
+
+
+  <script src="EX3.js"></script>
+
+  <!-- PART 1: Using two numbers (a and b) -->
+  <p>
+    Sum of multiples of a or b in list l.<br>
+    <label for="a1">A:</label> <input type="text" id="a1"><br>
+    <label for="b1">B:</label> <input type="text" id="b1"><br>
+    <label for="l">L (space-separated list):</label> 
+    <input type="text" id="l"><br>
+  </p>
+
+  <p>
+    <button onclick="eulerlist()">Press for solution to project Euler</button>
+  </p>
+
+  
+
+  <!-- PART 2: Two-element list a -->
+  <p>
+    <strong>Part 1:</strong> Compute the sum of multiples of elements in list a, found in list l.<br>
+    List a is of length 2.<br>
+    <label for="aList">A (space-separated):</label> 
+    <input type="text" id="aList"><br>
+    <label for="mList">L (space-separated):</label> 
+    <input type="text" id="mList"><br>
+  </p>
+
+  <p>
+    <button onclick="euler2Lists()">Press for custom sum of multiples (length 2)</button>
+  </p>
+
+  <!-- PART 3: Any-length list a -->
+  <p>
+    <strong>Part 2:</strong> Compute the sum of multiples of elements in list a, found in list l.<br>
+    List a may be any length.<br>
+    <label for="aList2">A (space-separated):</label> 
+    <input type="text" id="aList2"><br>
+    <label for="mList2">L (space-separated):</label> 
+    <input type="text" id="mList2"><br>
+  </p>
+
+  <p>
+    <button onclick="euler2Lists1()">Press for custom sum of multiples (any length)</button>
+  </p>
+       
    
 </body>
 </html>
