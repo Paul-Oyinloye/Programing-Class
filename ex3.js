@@ -41,10 +41,7 @@ let listEuler3 = (a, l) => {
 let eulerlist = () => {
   let a = parseInt(document.getElementById("a1").value);
   let b = parseInt(document.getElementById("b1").value);
-  let l = document
-    .getElementById("l")
-    .value.split(" ")
-    .map((x) => parseInt(x));
+  let l = document.getElementById("l").value.split(" ").map((x) => parseInt(x));
 
   if (isNaN(a) || isNaN(b) || l.some(isNaN)) {
     alert("Please enter valid numbers.");
