@@ -55,14 +55,8 @@ let eulerlist = () => {
 
 // Button 2 — list a has 2 elements
 let euler2Lists = () => {
-  let a = document
-    .getElementById("aList")
-    .value.split(" ")
-    .map((x) => parseInt(x));
-  let l = document
-    .getElementById("mList")
-    .value.split(" ")
-    .map((x) => parseInt(x));
+  let a = document.getElementById("aList").value.split(" ").map((x) => parseInt(x));
+  let l = document.getElementById("mList").value.split(" ").map((x) => parseInt(x));
 
   if (a.some(isNaN) || l.some(isNaN)) {
     alert("Please enter valid numbers.");
