@@ -1,3 +1,4 @@
+//chatgpt was used to formulate some codes and to understand the exercise
 // Function 1: sum of multiples of a or b in list l
 let listEuler1 = (a, b, l) => {
   let sum = 0;
@@ -16,7 +17,7 @@ let listEuler2 = (a, l) => {
     for (let div of a) {
       if (num % div === 0) {
         sum += num;
-        break; // avoid counting the same number twice
+        break; // avoided counting the same number twice
       }
     }
   }
