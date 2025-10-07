@@ -15,38 +15,44 @@
 
 //if you're finished, code it into a page
 
-let SumofMultiples = (a, l) => {
-    let sum = 0;
-    for (let num of 1) {
-        for (let f of a){
-            if (num % f == 0) {
-                sum += num;
-                break;
-            }
-        }
+window.euler4 = function () {
+  var input = document.getElementById('inputStr').value || '';
+  var parts = input.split(':');
+
+  if (parts.length !== 2) {
+    alert('Invalid input! Use format: factors : multiples (e.g. "3 5 : 1 2 3 4 5 6 7 8 9")');
+    return;
+  }
+
+  var factorTokens = parts[0].trim().split(/\s+/).filter(Boolean);
+  var multipleTokens = parts[1].trim().split(/\s+/).filter(Boolean);
+
+  var factors = factorTokens.map(Number);
+  var multiples = multipleTokens.map(Number);
+
+  if (factors.some(isNaN) || multiples.some(isNaN)) {
+    alert('Invalid numbers detected. Use only integers separated by spaces.');
+    return;
+  }
+
+  if (factors.some(f => f === 0)) {
+    alert('Factor cannot be zero.');
+    return;
+  }
+
+  var absFactors = Array.from(new Set(factors.map(Math.abs)));
+  var sum = 0;
+
+  for (var i = 0; i < multiples.length; i++) {
+    var n = multiples[i];
+    for (var j = 0; j < absFactors.length; j++) {
+      if (n % absFactors[j] === 0) {
+        sum += n;
+        break;
+      }
     }
-    return sum;
-};
+  }
 
-let  eulerstring = (inputstr)  => {
-    let parts = inputstr.split(":");
-    if  (parts.length !== 2) return "Invalid Input format!";
-
-
-let factors = parts[0].trim().split(" ").map(Number);
-let multiples = parts[1].trim().split(" ").map(Number);
-
-if (factors.some(isNaN)  || multiples.sum(isNaN))
-    return "invalid number format!";
-
-let result = SumofMultiples(factors, multiples);
-
-return `${result} : ${factors.join(" ")} : ${multiples.join(" ")}`;
-};
-
-let euler4 = () => {
-  let inputStr = document.getElementById("inputStr").value;
-  let output = eulerString(inputStr);
-  document.getElementById("result").innerText = output;
+  alert(sum); // only alert the solution number
 };
 
