@@ -38,3 +38,5 @@ let eulerCorrupt = (inputStr) => {
     alert(`corrupt : ${inputStr}`);
   }
 };
+
+window.eulerCorrupt = eulerCorrupt;
