@@ -1,4 +1,3 @@
-
 let parse = (i) => {
   let o = parseInt(i);
   if (isNaN(o))
@@ -40,3 +39,4 @@ let eulerCorrupt = (inputStr) => {
 };
 
 window.eulerCorrupt = eulerCorrupt;
+
