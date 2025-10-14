@@ -1,14 +1,9 @@
 class CounterButton extends HTMLElement {
   constructor() {
     super();
-
-    // Create Shadow DOM for encapsulation
     this.attachShadow({ mode: 'open' });
-
-    // Component state
     this.count = 0;
 
-    // Initial structure
     this.shadowRoot.innerHTML = `
       <style>
         button {
@@ -29,12 +24,10 @@ class CounterButton extends HTMLElement {
     `;
   }
 
-  // Called when component is added to the page
   connectedCallback() {
     this.button = this.shadowRoot.querySelector('button');
     this.display = this.shadowRoot.querySelector('span');
 
-    
     this.button.addEventListener('click', () => {
       this.count++;
       this.display.textContent = this.count;
@@ -42,6 +35,5 @@ class CounterButton extends HTMLElement {
     });
   }
 }
-
 
 customElements.define('counter-button', CounterButton);
