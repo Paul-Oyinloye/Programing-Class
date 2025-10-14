@@ -38,3 +38,10 @@ class CounterButton extends HTMLElement {
     this.button.addEventListener('click', () => {
       this.count++;
       this.display.textContent = this.count;
+      document.title = `Clicked ${this.count} times`;
+    });
+  }
+}
+
+
+customElements.define('counter-button', CounterButton);
