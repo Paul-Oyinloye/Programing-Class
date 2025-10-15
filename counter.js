@@ -7,7 +7,7 @@ class CounterButton extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         button {
-          background-color: #4caf50;
+          background-color: #f313e8ff;
           color: white;
           font-size: 16px;
           padding: 10px 16px;
